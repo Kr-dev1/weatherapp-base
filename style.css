@@ -1,0 +1,37 @@
+body {
+  background: #ecf2ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Alkatra", cursive;
+}
+
+main {
+  background-color: #e3dffd;
+  padding: 1.5em 5.5em;
+  border-radius: 1.5em;
+  filter: drop-shadow(6px 5px 15px #e5d1fa);
+  text-align: center;
+}
+
+.current-temp {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.current-feel {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.high-low {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
