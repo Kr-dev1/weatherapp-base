@@ -58,6 +58,11 @@ function renderForecast(weatherData) {
     .map((item) => {
       console.log(item);
       return `
+    <div class="weather-details">
+      <p>${item.dt_txt.split(" ")[1].slice(0, 5)}</p>
+      <p>${item.main.temp_min}</p>
+      <p>${item.main.temp_max}</p>
+    </div>
     `;
     })
     .join(" ");

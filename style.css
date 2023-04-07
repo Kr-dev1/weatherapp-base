@@ -35,3 +35,14 @@ main {
 h2 {
   margin: 0;
 }
+
+
+.weather-details{
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.weather-details > p{
+  padding-left: 10px;
+}
