@@ -29,7 +29,6 @@ function render(data) {
         `;
 }
 
-
 function gettime() {
   const date = new Date();
   document.getElementById("time-wrapper").textContent = date.toLocaleTimeString(
@@ -54,5 +53,13 @@ let foreCastData = navigator.geolocation.watchPosition((position) => {
 });
 
 function renderForecast(weatherData) {
-  console.log(weatherData.list[0]);
+  let weatherForecastData = weatherData.list.slice(1, 10);
+  let htmlData = weatherForecastData
+    .map((item) => {
+      console.log(item);
+      return `
+    `;
+    })
+    .join(" ");
+  document.getElementById("weatehrf-forecast-data").innerHTML = htmlData;
 }
