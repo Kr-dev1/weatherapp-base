@@ -13,16 +13,7 @@ let currentLocation = navigator.geolocation.watchPosition((position) => {
     .catch((err) => console.log(err));
 });
 
-function gettime() {
-  const date = new Date();
-  document.getElementById("time-wrapper").textContent = date.toLocaleTimeString(
-    "en-us",
-    { timeStyle: "short" }
-  );
-}
-
 function render(data) {
-  console.log(data);
   weatherDiv.innerHTML = `
   <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>
       <div>
@@ -38,4 +29,30 @@ function render(data) {
         `;
 }
 
+
+function gettime() {
+  const date = new Date();
+  document.getElementById("time-wrapper").textContent = date.toLocaleTimeString(
+    "en-us",
+    { timeStyle: "short" }
+  );
+}
+
 setInterval(gettime, 1000);
+
+let foreCastData = navigator.geolocation.watchPosition((position) => {
+  let lat = position.coords.latitude;
+  let long = position.coords.longitude;
+
+  const key = "a59e2100e3adb85cfe1124b32cbbe4b9";
+  const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=${key}&units=metric`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => renderForecast(data))
+    .catch((err) => console.log(err));
+});
+
+function renderForecast(weatherData) {
+  console.log(weatherData.list[0]);
+}
