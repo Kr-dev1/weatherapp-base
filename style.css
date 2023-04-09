@@ -11,7 +11,7 @@ body {
 }
 
 main {
-  background-color: #e3dffd;
+  background: #e3dffd;
   padding: 1.5em 5.5em;
   border-radius: 1.5em;
   filter: drop-shadow(6px 5px 15px #e5d1fa);
@@ -36,13 +36,33 @@ h2 {
   margin: 0;
 }
 
+.weather-forecast{
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 0 0;
+  width: 300px;
+  background: #e3dffd;
+  border-radius: 1.5em;
+  filter: drop-shadow(6px 5px 15px #e5d1fa);
+  text-align: center;
+}
+
+#weather-header-data{
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+}
 
 .weather-details{
   display: flex;
-  justify-content: space-between;
-  gap: 2em;
+  justify-content: space-around;
+  margin: 0;
 }
 
-.weather-details > p{
-  padding-left: 10px;
+.time{
+  margin-left: 20px;
+}
+
+.temp-min{
+  margin-left: 15px;
 }

@@ -53,18 +53,17 @@ let foreCastData = navigator.geolocation.watchPosition((position) => {
 });
 
 function renderForecast(weatherData) {
-  let weatherForecastData = weatherData.list.slice(1, 10);
+  let weatherForecastData = weatherData.list.slice(1, 6);
   let htmlData = weatherForecastData
     .map((item) => {
-      console.log(item);
       return `
     <div class="weather-details">
       <p>${item.dt_txt.split(" ")[1].slice(0, 5)}</p>
-      <p>${item.main.temp_min}</p>
-      <p>${item.main.temp_max}</p>
+      <p>${item.main.temp_min.toFixed(1)}&degC</p>
+      <p>${item.main.temp_max.toFixed(1)}&degC</p>
     </div>
     `;
     })
     .join(" ");
-  document.getElementById("weatehrf-forecast-data").innerHTML = htmlData;
+  document.getElementById("weather-forecast-data").innerHTML = htmlData;
 }
